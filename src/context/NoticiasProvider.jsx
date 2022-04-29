@@ -6,7 +6,8 @@ import { useState, useEffect, createContext } from 'react'
 const NoticiasContext = createContext()
 
 const NoticiasProvider = ({children}) => {
-    const [categoria,setCategoria] = useState('general')
+    const [categoria,setCategoria] = useState('general');
+    const [noticias,setNoticias] = useState([]);
 
     const handleChangeCategoria = e => {
         setCategoria(e.target.value)
@@ -20,7 +21,9 @@ const NoticiasProvider = ({children}) => {
 
             const { data } = await axios(url)
 
-            console.log(data)
+            console.log('DATA',data)
+
+            setNoticias(data.articles)
         }
         consultarApi()
     },[categoria])
@@ -29,7 +32,8 @@ const NoticiasProvider = ({children}) => {
         <NoticiasContext.Provider
             value={{
                 categoria,
-                handleChangeCategoria
+                handleChangeCategoria,
+                noticias
             }}
         >
             {children}

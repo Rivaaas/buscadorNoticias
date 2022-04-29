@@ -2,9 +2,7 @@ import {
   FormControl,
   InputLabel,
   Select,
-  MenuItem,
-  Button,
-  Box
+  MenuItem
 } from "@mui/material";
 
 
@@ -43,11 +41,7 @@ const Formulario = () => {
           ))}
 
         </Select>
-        <Box sx={{marginTop:2}} >
-          <Button fullWidth variant="contained" color="primary">
-            BUSCAR NOTICIAS
-          </Button>
-        </Box>
+        
       </FormControl>
     </form>
   );
