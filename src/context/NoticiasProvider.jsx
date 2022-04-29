@@ -8,6 +8,7 @@ const NoticiasContext = createContext()
 const NoticiasProvider = ({children}) => {
     const [categoria,setCategoria] = useState('general');
     const [noticias,setNoticias] = useState([]);
+    const [pagina,setPagina] = useState(1)
 
     const handleChangeCategoria = e => {
         setCategoria(e.target.value)
@@ -27,6 +28,10 @@ const NoticiasProvider = ({children}) => {
         }
         consultarApi()
     },[categoria])
+
+    useEffect( () => {
+
+    },[])
 
     return (
         <NoticiasContext.Provider

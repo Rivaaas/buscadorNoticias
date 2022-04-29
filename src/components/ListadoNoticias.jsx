@@ -5,7 +5,6 @@ import Noticia from "./Noticia";
 const ListadoNoticias = () => {
   const { noticias } = useNoticias();
 
-  console.log("LISTADO NOTICIAS", noticias);
   return (
     <>
       <Typography textAlign="center" marginY={5} variant="h3" component="h2">
